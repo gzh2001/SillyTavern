@@ -1,6 +1,13 @@
 name: Create Docker Image (Release and Staging)
 
 on:
+  # 1. 手动触发
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: '要构建的分支（branch 或 tag）'
+        required: true
+        default: 'release'
   release:
     types: [published]
   schedule:
