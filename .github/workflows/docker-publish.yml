@@ -32,7 +32,8 @@ jobs:
       - name: Set lowercase repo name
         run: |
           # echo "IMAGE_NAME=${REPO,,}" >> $GITHUB_ENV
-          echo "IMAGE_NAME=${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.name }}" >> $GITHUB_ENV
+          # echo "IMAGE_NAME=${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.name }}" >> $GITHUB_ENV
+          echo "IMAGE_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
 
       # ———————— 合并 Checkout 步骤 ————————
       - name: Checkout code
